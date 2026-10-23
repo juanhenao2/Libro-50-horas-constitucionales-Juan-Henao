@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#102a43">
+<meta name="description" content="Libro virtual de Estudios Constitucionales y Formación Ciudadana de Juan Esteban Henao Rivillas.">
+<title>Estudio Constitucional | Libro virtual</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#102a43;--blue:#1d4e89;--gold:#e8b04a;--paper:#fffdf7;--ink:#243447}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#244e70,#0b1928 70%);color:#f5f7fa;font-family:'DM Sans',sans-serif;min-height:100vh}
+header{display:flex;justify-content:space-between;align-items:center;padding:18px clamp(16px,4vw,48px);border-bottom:1px solid #ffffff26}
+.brand{font-weight:700;letter-spacing:.12em;font-size:.82rem}.brand span{color:var(--gold)}
+header button,.controls button,.action{border:1px solid #ffffff50;background:#ffffff12;color:#fff;border-radius:999px;padding:10px 15px;cursor:pointer;font:inherit}
+header button:hover,.controls button:hover,.action:hover{background:#ffffff25}
+main{max-width:1200px;margin:auto;padding:24px 18px 42px}
+.intro{text-align:center;margin:22px auto 24px;max-width:780px}.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:.2em;font-size:.75rem;font-weight:700}
+h1,h2{font-family:'Playfair Display',serif}h1{font-size:clamp(2rem,5vw,3.8rem);line-height:1.08;margin:12px 0} .intro p{color:#d4e0eb;line-height:1.7}
+.reader{position:relative;max-width:1000px;margin:auto}.book-shell{min-height:350px;display:flex;align-items:center;justify-content:center}
+#book{margin:auto!important}.page{background:var(--paper);color:var(--ink);overflow:hidden;box-shadow:0 10px 25px #0003}.page canvas{display:block;width:100%;height:100%;object-fit:contain;background:var(--paper)}
+.cover{height:100%;padding:28px;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(145deg,#102a43,#1d4e89);color:white;border:8px solid #e8b04a;outline:1px solid #e8b04a;outline-offset:-15px;text-align:center}
+.cover .seal{font-size:2.5rem}.cover h2{font-size:clamp(1.2rem,2vw,2rem);line-height:1.2}.cover .sub{color:#f5d89a;letter-spacing:.12em;text-transform:uppercase;font-size:.7rem}.cover .author{line-height:1.6;font-size:.88rem}
+.controls{display:flex;justify-content:center;align-items:center;gap:12px;margin:20px 0 10px;flex-wrap:wrap}.counter{font-variant-numeric:tabular-nums;color:#d4e0eb;min-width:130px;text-align:center;font-size:.9rem}
+.hint{text-align:center;color:#b7c8d8;font-size:.82rem;margin:12px 0 30px}
+.bottom{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:1000px;margin:0 auto}.panel{background:#ffffff0d;border:1px solid #ffffff20;border-radius:16px;padding:18px}.panel h3{margin:0 0 10px;color:#f5d89a;font-family:'Playfair Display',serif}.panel p{margin:0;color:#d4e0eb;line-height:1.6;font-size:.9rem}
+#toc{display:none;max-width:1000px;margin:0 auto 22px;background:#fffdf7;color:var(--ink);border-radius:14px;padding:18px;max-height:340px;overflow:auto}#toc.open{display:block}.toc-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.toc-list button{padding:10px;text-align:left;background:#f0f4f8;border:1px solid #d9e2ec;border-radius:9px;color:var(--ink);cursor:pointer}.toc-list button:hover{background:#e1ecf4}
+footer{text-align:center;padding:22px;color:#aebdca;font-size:.78rem}
+@media(max-width:650px){header{padding:14px}.brand{font-size:.7rem}main{padding:12px 10px 28px}.book-shell{min-height:280px}.bottom{grid-template-columns:1fr}.toc-list{grid-template-columns:1fr}.controls button{padding:9px 12px}}
+</style>
+</head>
+<body>
+<header><div class="brand"><span>●</span> LIBRO VIRTUAL <span>·</span> ESTUDIOS CONSTITUCIONALES</div><button id="tocToggle" aria-expanded="false">☰ Índice</button></header>
+<main>
+<section class="intro"><div class="eyebrow">50 horas de formación ciudadana</div><h1>Estudio Constitucional y Formación Ciudadana</h1><p>Un enfoque técnico para la transformación social · Constitución Política de Colombia de 1991</p></section>
+<div id="toc"><h3>Índice del libro</h3><p>Selecciona un tema para ir a esa parte del documento.</p><div class="toc-list" id="tocList"></div></div>
+<section class="reader">
+<div class="book-shell"><div id="book"></div></div>
+<div class="controls"><button id="prev" aria-label="Página anterior">‹ Anterior</button><span class="counter" id="counter">Preparando libro…</span><button id="next" aria-label="Página siguiente">Siguiente ›</button><button id="fullscreen">⛶ Pantalla completa</button></div>
+<p class="hint">Usa las flechas para pasar páginas · en celular, desliza · abre el índice para saltar a un módulo.</p>
+</section>
+<section class="bottom"><article class="panel"><h3>Sobre este libro</h3><p>Proyecto de 50 Horas de Estudios Constitucionales. Instituto Técnico Industrial Pascual Bravo, grado 11°6, área de Electricidad y Electrónica.</p></article><article class="panel"><h3>Autor</h3><p>Juan Esteban Henao Rivillas<br>Medellín, Colombia · 22 de octubre de 2026</p></article></section>
+</main>
+<footer>Libro educativo digital · Contenido basado en el PDF del proyecto original.</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.min.js"></script>
+<script>
+const PDF_PATH = './assets/libro.pdf';
+const sections = [
+['Portada del libro',1],['Tabla de contenido',2],['Introducción',4],['Justificación',5],['Marco legal',6],
+['Módulo 1 · Fundamentos de la Constitución',7],['Sesión 1 · Historia constitucional',7],['Sesión 2 · Principios fundamentales',8],['Sesión 3 · Derechos fundamentales',9],['Sesión 4 · Deberes ciudadanos',11],['Sesión 5 · Línea del tiempo',12],
+['Módulo 2 · Estructura y funcionamiento del Estado',13],['Sesión 6 · Ramas del poder público',13],['Sesión 7 · Órganos de control',14],['Sesión 8 · Participación ciudadana',15],['Sesión 9 · Separación de poderes',16],['Sesión 10 · Debate del presupuesto 2027',17],
+['Módulo 3 · Ciudadanía y democracia',18],['Sesión 11 · Mecanismos de participación',18],['Sesión 12 · Elecciones y representación',20],['Sesión 13 · Elecciones 2026',21],
+['Módulo 4 · Constitución en la vida cotidiana',23],['Sesión 14 · Derechos en la escuela',23],['Sesión 15 · Resolución pacífica de conflictos',24],['Sesión 16 · Casos prácticos',25],
+['Módulo 5 · Realidad social contemporánea',26],['Sesión 17 · Retos actuales',26],['Sesión 18 · Reformas, DD. HH. y paz',27],['Sesión 19 · Libertades ciudadanas',28],['Sesión 20 · ¿Nueva Constitución?',29],
+['Módulo 6 · Motor de transformación social',30],['Conclusiones generales',33],['Cibergrafía',35]
+];
+let flipBook, pdfDoc;
+const $=id=>document.getElementById(id);
+function buildToc(){const list=$('tocList');sections.forEach(([label,p])=>{const b=document.createElement('button');b.textContent=label;b.onclick=()=>{if(flipBook){flipBook.flip(p);$('toc').classList.remove('open');$('tocToggle').setAttribute('aria-expanded','false')}};list.appendChild(b)})}
+function updateCounter(){if(!flipBook)return;let p=flipBook.getCurrentPageIndex()+1;$('counter').textContent=`Hoja ${p} / ${pdfDoc.numPages+1}`;}
+async function start(){
+ try{
+  if(!window.pdfjsLib||!window.St||!window.St.PageFlip)throw new Error('No se pudieron cargar las librerías. Revisa la conexión a internet y vuelve a cargar.');
+  pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+  pdfDoc=await pdfjsLib.getDocument(PDF_PATH).promise;
+  const pages=[];
+  const cover=document.createElement('div');cover.className='page';cover.innerHTML='<div class="cover"><div><div class="seal">⚖</div><div class="sub">50 horas constitucionales</div></div><div><h2>Estudio Constitucional y Formación Ciudadana</h2><p>Un enfoque técnico para la transformación social</p></div><div class="author">Juan Esteban Henao Rivillas<br>Instituto Técnico Industrial Pascual Bravo · 11°6<br>Medellín, Colombia · 2026</div></div>';pages.push(cover);
+  for(let n=1;n<=pdfDoc.numPages;n++){
+   const page=await pdfDoc.getPage(n);const vp=page.getViewport({scale:1.25});const canvas=document.createElement('canvas');canvas.width=vp.width;canvas.height=vp.height;
+   await page.render({canvasContext:canvas.getContext('2d'),viewport:vp}).promise;
+   const holder=document.createElement('div');holder.className='page';holder.appendChild(canvas);pages.push(holder);
+  }
+  flipBook=new St.PageFlip($('book'),{width:420,height:594,size:'stretch',minWidth:280,maxWidth:700,minHeight:380,maxHeight:990,showCover:true,drawShadow:true,flippingTime:700,usePortrait:true,startPage:0,autoSize:true,maxShadowOpacity:.35});
+  flipBook.loadFromHTML(pages);flipBook.on('flip',updateCounter);$('counter').textContent=`Hoja 1 / ${pages.length}`;buildToc();
+ }catch(e){$('counter').textContent='No se pudo cargar el libro';$('book').innerHTML='<div style="padding:24px;background:#fffdf7;color:#243447;border-radius:12px;max-width:560px">No se pudo abrir el libro. Comprueba que el archivo <b>assets/libro.pdf</b> esté en el repositorio y que tengas conexión a internet. Detalle: '+e.message+'</div>'}
+}
+$('prev').onclick=()=>flipBook&&flipBook.flipPrev();$('next').onclick=()=>flipBook&&flipBook.flipNext();
+$('tocToggle').onclick=()=>{const open=$('toc').classList.toggle('open');$('tocToggle').setAttribute('aria-expanded',String(open))};
+$('fullscreen').onclick=()=>{const el=$('.reader');if(!document.fullscreenElement)el.requestFullscreen?.();else document.exitFullscreen?.()};
+document.addEventListener('keydown',e=>{if(!flipBook)return;if(e.key==='ArrowRight')flipBook.flipNext();if(e.key==='ArrowLeft')flipBook.flipPrev()});
+start();
+</script>
+</body>
+</html>
